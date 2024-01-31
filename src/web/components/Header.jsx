@@ -1,16 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
 
-// const MenuItem = ({ children, href, ...otherProps }) => {
-//   return (
-//     <li {...otherProps}>
-//       <Link styless href={href}>
-//         {children}
-//       </Link>
-//     </li>
-//   )
-// }
-
 const Header = () => {
   return (
     <header className="flex flex-row items-center justify-between m-5 p-5 text-xl border-b-2 border-b-[#F2E963] border-[#F2E963]">
