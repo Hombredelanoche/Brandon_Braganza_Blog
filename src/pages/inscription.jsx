@@ -1,11 +1,4 @@
-const Inscription = () => {
-  return (
-    <>
-      <section>
-        <h1>Inscription</h1>
-      </section>
-    </>
-  )
-}
-
-export default Inscription
+import React from "react"
+import { Formik, useFormik } from "formik"
+import { data } from "autoprefixer"
+import { date, object } from "yup"

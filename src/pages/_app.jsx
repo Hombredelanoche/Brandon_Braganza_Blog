@@ -8,15 +8,13 @@ import { config } from "dotenv"
 
 const App = ({ Component, pageProps }) => {
   return (
-    <>
-      <div className="flex flex-col">
-        <Header />
-        <main className="h-screen p-10">
-          <Component {...pageProps} />
-        </main>
-        <Footer />
-      </div>
-    </>
+    <div className="flex flex-col">
+      <Header />
+      <main className="h-screen p-10">
+        <Component {...pageProps} />
+      </main>
+      <Footer />
+    </div>
   )
 }
 
