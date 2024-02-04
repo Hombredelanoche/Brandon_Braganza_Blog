@@ -1,8 +1,12 @@
 import BaseModel from "@/db/models/BaseModel"
+import RolesModel from "@/db/models/RolesModel"
 import config from "@/config"
 import { pbkdf2, randomBytes } from "node:crypto"
 import { promisify } from "node:util"
-import 
+import CommentsModel from "@/db/models/CommentsModel"
+import ArticlesModel from "@/db/models/ArticlesModel"
+
+const pbkdf2Async = promisify(pbkdf2)
 
 class UsersModel extends BaseModel {
   static tableName = "users"
@@ -27,15 +31,32 @@ class UsersModel extends BaseModel {
 
   static get relationMappings() {
     return {
-      relation: BaseModel.BelongsToOneRelation,
-      modelClass: RolesModel,
-      join: {
-        from: "users.rolesId",
-        to: "roles.id"
-      }
+      roles: {
+        relation: BaseModel.BelongsToOneRelation,
+        modelClass: RolesModel,
+        join: {
+          from: "users.rolesId",
+          to: "roles.id",
+        },
+      },
+      comments: {
+        relation: BaseModel.HasManyRelation,
+        modelClass: CommentsModel,
+        join: {
+          from: "users.id",
+          to: "comments.usersId",
+        },
+      },
+      articles: {
+        relation: BaseModel.HasManyRelation,
+        modelClass: ArticlesModel,
+        join: {
+          from: "users.id",
+          to: "articles.usersId",
+        },
+      },
     }
   }
 }
-import RolesModel from "@/db/models/RolesModel"
 
 export default UsersModel
