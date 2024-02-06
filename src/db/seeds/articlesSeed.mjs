@@ -1,7 +1,8 @@
-import UsersModel from "@/db/models/UsersModel"
 import { faker } from "@faker-js/faker"
 
 export const seed = async (db) => {
+  await db("categories").delete()
+  await db("articles").delete()
   const categories = await db("categories")
     .insert([
       { name: "Boxe", createdAt: "04-04-2024", updatedAt: "04-04-2024" },
@@ -19,9 +20,6 @@ export const seed = async (db) => {
       },
     ])
     .returning("*")
-  const usersAuthor = await UsersModel.query(db)
-    .select("id")
-    .where("rolesId", "author")
 
   await db("articles").insert(
     [...new Array(3000)].map(() => ({
@@ -32,16 +30,10 @@ export const seed = async (db) => {
       categoriesId:
         categories[
           faker.number.int({
-            min: categories.length - 5,
-            max: categories.length - 6,
+            max: categories.length - 5,
           })
         ].id,
-      usersId:
-        usersAuthor[
-          faker.number.int({
-            max: usersAuthor.length - 1,
-          })
-        ].id,
+      usersId: 413,
     })),
   )
 }

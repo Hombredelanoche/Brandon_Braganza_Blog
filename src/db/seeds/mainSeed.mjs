@@ -2,10 +2,6 @@ import { faker } from "@faker-js/faker"
 
 export const seed = async (db) => {
   await db("users").delete()
-  await db("categories").delete()
-  await db("articles").deleter()
-  await db("pictures").delete()
-  await db("comments").delete()
   await db("roles").delete()
   const roles = await db("roles")
     .insert([{ name: "admin" }, { name: "author" }, { name: "visitor" }])
