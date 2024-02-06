@@ -1,7 +1,6 @@
 import { faker } from "@faker-js/faker"
 
 export const seed = async (db) => {
-  await db("categories").delete()
   await db("articles").delete()
   const categories = await db("categories")
     .insert([
@@ -33,7 +32,7 @@ export const seed = async (db) => {
             max: categories.length - 5,
           })
         ].id,
-      usersId: 413,
+      usersId: 25,
     })),
   )
 }
