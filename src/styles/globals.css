@@ -6,10 +6,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: black;
   color: white;
 }
 
 body {
-  background-color: beige;
+  background-image: url(../../public/background-image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
