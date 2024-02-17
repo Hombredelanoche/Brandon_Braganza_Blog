@@ -3,16 +3,17 @@ import Link from "next/link"
 
 const Header = () => {
   return (
-    <header className="flex flex-row items-center justify-between m-5 p-5 text-xl border-b-2 border-b-[#F2E963] border-[#F2E963]">
+    <header className="flex flex-row items-center justify-around p-5 text-lg ">
       <Link href="/">
         <Image
           src="/LOGO_J.png"
           alt="Logo of the web site"
           title="Logo of the web site"
-          width={200}
-          height={200}
+          width={100}
+          height={100}
         />
       </Link>
+
       <ul className="flex gap-20">
         <li>
           <Link href="/">Accueil</Link>
@@ -24,7 +25,7 @@ const Header = () => {
           <Link href="/contact">Contact</Link>
         </li>
       </ul>
-      <ul className="flex gap-10">
+      <ul className="flex gap-5">
         <li>
           <Link href="/inscription">Inscription</Link>
         </li>
