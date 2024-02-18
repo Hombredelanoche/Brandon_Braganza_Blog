@@ -7,14 +7,15 @@ import {
   passwordValidator,
 } from "@/utils/validators"
 import Alert from "@/web/components/ui/Alert"
-import Form from "@/web/components/ui/Form"
-import FormField from "@/web/components/ui/FormField"
+import Form from "@/web/components/ui/uiForm/Form"
 import Link from "@/web/components/ui/Link"
 import SubmitButton from "@/web/components/ui/SubmitButton"
 import apiClient from "@/web/services/apiClient"
 import { useMutation } from "@tanstack/react-query"
 import { Field, Formik } from "formik"
 import { object } from "yup"
+import FormField from "@/web/components/ui/uiForm/FormField"
+import FormSelectField from "@/web/components/ui/uiForm/FormSelectField"
 
 const initialValues = {
   lastname: "",
@@ -36,6 +37,11 @@ const validationSchema = object({
   gender: genderValidator.label("Gender"),
 })
 
+const options = [
+  { value: "woman", label: "Women" },
+  { value: "man", label: "Man" },
+  { value: "orther", label: "Other" },
+]
 const Inscription = () => {
   const { isSuccess, mutateAsync } = useMutation({
     mutationFn: (values) => apiClient.post("/users", values),
@@ -69,56 +75,43 @@ const Inscription = () => {
           onSubmit={handleSubmit}
         >
           <Form>
-            <Field
+            <FormField
               type="text"
               name="lastname"
               placeholder="Enter your lastname"
-              className="text-black p-2"
+              label="Lastname"
             />
-            <Field
+            <FormField
               type="text"
               name="firstname"
               placeholder="Enter your firstname"
-              className="text-black p-2"
+              label="Firstname"
             />
-            <Field
+            <FormField
               type="email"
               name="email"
               placeholder="Enter your email"
-              className="text-black p-2"
+              label="E-mail"
             />
-            <Field
+            <FormField
               type="password"
               name="password"
               placeholder="Enter your password"
-              className="text-black p-2"
+              label="Password"
             />
-            <Field
+            <FormField
               type="password"
               name="cpassword"
               placeholder="Confirm your password"
-              className="text-black p-2"
+              label="Confirm password"
             />
-            <Field
+            <FormField
               type="date"
               name="birthday"
               placeholder="Select your birthday"
-              className="text-black p-2"
+              label="Birthday"
             />
-            <Field as="select" name="gender" className="text-black p-2">
-              <option value="" className="text-black">
-                Select your gender
-              </option>
-              <option value="Male" className="text-black">
-                Male
-              </option>
-              <option value="Female" className="text-black">
-                Female
-              </option>
-              <option value="Other" className="text-black">
-                Other
-              </option>
-            </Field>
+            <FormSelectField name="gender" label="Gender" options={options} />
             <SubmitButton>Sign Up</SubmitButton>
           </Form>
         </Formik>

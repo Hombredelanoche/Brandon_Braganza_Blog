@@ -3,7 +3,7 @@ import { Form as FormikForm } from "formik"
 
 const Form = ({ className, ...otherProps }) => (
   <FormikForm
-    className={clsx("flex flex-col gap-4", className)}
+    className={clsx("flex flex-col gap-4 p-10", className)}
     noValidate
     {...otherProps}
   />
