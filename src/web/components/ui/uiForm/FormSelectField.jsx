@@ -13,7 +13,7 @@ const FormSelectField = ({
 
   return (
     <label className={(clsx("flex flex-col gap-2"), className)}>
-      <span className="font-semubold text-sm m-5"> {label} </span>
+      <span className="font-semibold text-sm mb-2"> {label} </span>
       <select className="border-2 p-2" {...field} {...otherProps}>
         {options.map((option) => (
           <option

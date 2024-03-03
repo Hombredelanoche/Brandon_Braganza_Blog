@@ -20,16 +20,16 @@ const handle = mw({
       input: {
         body: { email, password },
       },
-      models: { UserModel },
+      models: { UsersModel },
       res,
     }) => {
-      const user = await UserModel.query().findOne({ email })
+      const user = await UsersModel.query().findOne({ email })
 
       if (!user) {
         throw new UnauthorizedError()
       }
 
-      const [passwordHash] = await UserModel.hashPassword(
+      const [passwordHash] = await UsersModel.hashPassword(
         password,
         user.passwordSalt,
       )

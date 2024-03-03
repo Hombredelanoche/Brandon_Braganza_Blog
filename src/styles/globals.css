@@ -6,7 +6,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: white;
 }
 
 body {
@@ -14,9 +13,4 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-input,
-select {
-  color: black;
 }

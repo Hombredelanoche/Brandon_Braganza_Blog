@@ -68,25 +68,31 @@ const Inscription = () => {
 
   return (
     <>
-      <section className="">
+      <section className="flex justify-center items-center mt-28">
         <Formik
           validationSchema={validationSchema}
           initialValues={initialValues}
           onSubmit={handleSubmit}
         >
-          <Form>
-            <FormField
-              type="text"
-              name="lastname"
-              placeholder="Enter your lastname"
-              label="Lastname"
-            />
-            <FormField
-              type="text"
-              name="firstname"
-              placeholder="Enter your firstname"
-              label="Firstname"
-            />
+          <Form className="w-full max-w-xl bg-white rounded-lg shadow-sm">
+            <h2 className="text-2xl font-semibold mb-4 text-black">
+              S'inscrire
+            </h2>
+            <section className="flex gap-10">
+              <FormField
+                type="text"
+                name="lastname"
+                placeholder="Enter your lastname"
+                label="Lastname"
+              />
+              <FormField
+                type="text"
+                name="firstname"
+                placeholder="Enter your firstname"
+                label="Firstname"
+              />
+            </section>
+
             <FormField
               type="email"
               name="email"
@@ -105,14 +111,31 @@ const Inscription = () => {
               placeholder="Confirm your password"
               label="Confirm password"
             />
-            <FormField
-              type="date"
-              name="birthday"
-              placeholder="Select your birthday"
-              label="Birthday"
-            />
-            <FormSelectField name="gender" label="Gender" options={options} />
-            <SubmitButton>Sign Up</SubmitButton>
+
+            <section className="flex gap-20">
+              <FormField
+                type="date"
+                name="birthday"
+                placeholder="Select your birthday"
+                label="Birthday"
+              />
+              <FormSelectField
+                name="gender"
+                label="Gender"
+                options={options}
+                className="flex flex-col"
+              />
+            </section>
+
+            <span className="text-xs">
+              Vous avez déjà un compte ?
+              <Link href="/connexion" className="font-semibold">
+                {" "}
+                Connectez-vous !
+              </Link>
+            </span>
+
+            <SubmitButton>Valider</SubmitButton>
           </Form>
         </Formik>
       </section>
