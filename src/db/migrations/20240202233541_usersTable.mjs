@@ -9,6 +9,8 @@ export const up = async (db) => {
     table.date("birthday").notNullable()
     table.string("gender", 50).notNullable()
     table.timestamps(true, true, true)
+    table.integer("roleId").notNullable()
+    table.foreign("roleId").references("id").inTable("roles")
   })
 }
 

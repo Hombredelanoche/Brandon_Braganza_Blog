@@ -4,6 +4,8 @@ export const up = async (db) => {
     table.string("title", 255).unique().notNullable()
     table.text("description").notNullable()
     table.timestamps(true, true, true)
+    table.integer("usersId").notNullable()
+    table.foreign("usersId").references("id").inTable("users")
   })
 }
 
