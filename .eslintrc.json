@@ -3,7 +3,6 @@
   "extends": [
     "eslint:recommended",
     "prettier",
-    "next/babel",
     "next/core-web-vitals",
     "plugin:react/recommended"
   ],

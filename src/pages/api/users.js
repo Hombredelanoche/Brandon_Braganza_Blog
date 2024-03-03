@@ -25,10 +25,16 @@ const handle = mw({
       input: {
         body: { lastname, firstname, email, password, birthday, gender },
       },
-      models: { UserModel },
+      models: { UsersModel },
       res,
     }) => {
-      const user = await UserModel.query().findOne({ email })
+      const user = await UsersModel.query().findOne({
+        lastname,
+        firstname,
+        email,
+        birthday,
+        gender,
+      })
 
       if (user) {
         res.send({ result: true })
@@ -37,12 +43,16 @@ const handle = mw({
       }
 
       const [passwordHash, passwordSalt] =
-        await UserModel.hashPassword(password)
+        await UsersModel.hashPassword(password)
 
-      await UserModel.query().insertAndFetch({
+      await UsersModel.query().insertAndFetch({
+        lastname,
+        firstname,
         email,
         passwordHash,
         passwordSalt,
+        birthday,
+        gender,
       })
 
       res.send({ result: true })

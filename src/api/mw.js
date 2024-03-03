@@ -10,6 +10,7 @@ import ArticlesModel from "@/db/models/ArticlesModel"
 import CategoriesModel from "@/db/models/CategoriesModel"
 import CommentsModel from "@/db/models/CommentsModel"
 import PicturesModel from "@/db/models/PicturesModel"
+import ArticlesPicturesModel from "@/db/models/ArticlesPictures"
 import knex from "knex"
 import { NotFoundError as ObjectionNotFoundError } from "objection"
 
@@ -30,6 +31,7 @@ const mw = (handlers) => async (req, res) => {
       CategoriesModel,
       CommentsModel,
       PicturesModel,
+      ArticlesPicturesModel,
     },
     req,
     res,

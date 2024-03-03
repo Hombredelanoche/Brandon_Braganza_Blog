@@ -1,20 +1,19 @@
 import Image from "next/image"
-import Link from "next/link"
+import Link from "@/web/components/ui/Link"
 
 const Header = () => {
   return (
-    <header className="flex flex-row items-center justify-around p-5 text-lg ">
+    <header className="flex flex-row items-center justify-around p-5 text-lg bg-white w-full">
       <Link href="/">
         <Image
-          src="/LOGO_J.png"
+          src="/LOGO.png"
           alt="Logo of the web site"
           title="Logo of the web site"
-          width={100}
-          height={100}
+          width={90}
+          height={90}
         />
       </Link>
-
-      <ul className="flex gap-20">
+      <ul className="flex gap-20 ">
         <li>
           <Link href="/">Accueil</Link>
         </li>
@@ -25,7 +24,7 @@ const Header = () => {
           <Link href="/contact">Contact</Link>
         </li>
       </ul>
-      <ul className="flex gap-5">
+      <ul className="flex gap-10">
         <li>
           <Link href="/inscription">Inscription</Link>
         </li>

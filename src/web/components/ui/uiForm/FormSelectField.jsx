@@ -16,7 +16,11 @@ const FormSelectField = ({
       <span className="font-semubold text-sm m-5"> {label} </span>
       <select className="border-2 p-2" {...field} {...otherProps}>
         {options.map((option) => (
-          <option key={option.value} value={option.value}>
+          <option
+            key={option.value}
+            value={option.value}
+            className="text-black"
+          >
             {option.label}
           </option>
         ))}

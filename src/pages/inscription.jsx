@@ -68,7 +68,7 @@ const Inscription = () => {
 
   return (
     <>
-      <section>
+      <section className="">
         <Formik
           validationSchema={validationSchema}
           initialValues={initialValues}
