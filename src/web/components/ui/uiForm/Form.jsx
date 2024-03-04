@@ -6,7 +6,7 @@ const Form = ({ className, ...otherProps }) => (
     className={clsx("flex flex-col gap-4 p-10", className)}
     noValidate
     {...otherProps}
-  />
+  ></FormikForm>
 )
 
 export default Form

@@ -68,7 +68,7 @@ const Inscription = () => {
 
   return (
     <>
-      <section className="flex justify-center items-center mt-28">
+      <section className="flex justify-center items-center mt-10">
         <Formik
           validationSchema={validationSchema}
           initialValues={initialValues}
