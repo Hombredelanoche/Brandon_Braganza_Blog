@@ -1,5 +1,6 @@
 import { date, number, ref, string } from "yup"
 
+// Form inscription & connexion validator
 export const emailValidator = string().email().required()
 export const passwordValidator = string()
   .min(10)
@@ -17,3 +18,8 @@ export const birthdayValidator = date().required()
 export const genderValidator = string().max(50).required()
 export const roleIdValidator = number().default(3).required()
 export const idValidator = number().integer().min(1).required()
+
+// Articles - Create & update validator
+
+export const titleValidator = string().max(255).required()
+export const descriptionValidator = string().min(50).required()

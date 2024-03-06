@@ -1,7 +1,10 @@
-import { Inter } from "next/font/google"
-
-const inter = Inter({ subsets: ["latin"] })
-
 export default function Home() {
-  return <section></section>
+  return (
+    const {}
+    <>
+      <section className="w-96 bg-white h-20 rounded-lg">
+        {}
+      </section>
+    </>
+  )
 }
