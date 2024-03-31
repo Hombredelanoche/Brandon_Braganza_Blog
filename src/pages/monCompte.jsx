@@ -10,7 +10,6 @@ export const getServerSideProps = async () => {
     props: { initialData: data },
   }
 }
-
 const MonCompte = ({ initialData }) => {
   const { query } = useRouter()
   const {

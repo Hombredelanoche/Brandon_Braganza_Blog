@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Link from "@/web/components/ui/Link"
 import { useSession } from "@/web/components/SessionContext"
-import NavBar from "@/web/components/ui/uiAdmin/navBar"
 
 const Header = () => {
   const { session, signOut } = useSession()
@@ -33,7 +32,6 @@ const Header = () => {
             <>
               <li>
                 <Link href="/" onClick={signOut}>
-                  {" "}
                   Déconnexion
                 </Link>
               </li>
@@ -53,13 +51,6 @@ const Header = () => {
           )}
         </ul>
       </header>
-      {/* {session ? (
-        <>
-          <NavBar />
-        </>
-      ) : (
-        <></>
-      )} */}
     </>
   )
 }

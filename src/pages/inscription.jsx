@@ -12,7 +12,7 @@ import Link from "@/web/components/ui/Link"
 import SubmitButton from "@/web/components/ui/SubmitButton"
 import apiClient from "@/web/services/apiClient"
 import { useMutation } from "@tanstack/react-query"
-import { Field, Formik } from "formik"
+import { Formik } from "formik"
 import { object } from "yup"
 import FormField from "@/web/components/ui/uiForm/FormField"
 import FormSelectField from "@/web/components/ui/uiForm/FormSelectField"
@@ -27,7 +27,6 @@ const initialValues = {
   gender: "",
   roleId: 3,
 }
-
 const validationSchema = object({
   lastname: lastnameValidator.label("Lastname"),
   firstname: firstnameValidator.label("Firstname"),
@@ -36,7 +35,6 @@ const validationSchema = object({
   birthday: birthdayValidator.label("Birthday"),
   gender: genderValidator.label("Gender"),
 })
-
 const options = [
   { value: "woman", label: "Women" },
   { value: "man", label: "Man" },
@@ -83,13 +81,13 @@ const Inscription = () => {
                 type="text"
                 name="lastname"
                 placeholder="Enter your lastname"
-                label="Lastname"
+                label="Nom"
               />
               <FormField
                 type="text"
                 name="firstname"
                 placeholder="Enter your firstname"
-                label="Firstname"
+                label="Prénom"
               />
             </section>
 
@@ -103,13 +101,13 @@ const Inscription = () => {
               type="password"
               name="password"
               placeholder="Enter your password"
-              label="Password"
+              label="Mot de passe"
             />
             <FormField
               type="password"
               name="cpassword"
               placeholder="Confirm your password"
-              label="Confirm password"
+              label="Confirmez votre mot de passe"
             />
 
             <section className="flex gap-20">
@@ -117,11 +115,11 @@ const Inscription = () => {
                 type="date"
                 name="birthday"
                 placeholder="Select your birthday"
-                label="Birthday"
+                label="Date de naissance"
               />
               <FormSelectField
                 name="gender"
-                label="Gender"
+                label="Genre"
                 options={options}
                 className="flex flex-col"
               />

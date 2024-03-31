@@ -1,6 +1,5 @@
 import { emailValidator, passwordValidator } from "@/utils/validators"
 import { useSession } from "@/web/components/SessionContext"
-import Button from "@/web/components/ui/Button"
 import ErrorMessage from "@/web/components/ui/ErrorMessage"
 import SubmitButton from "@/web/components/ui/SubmitButton"
 import Form from "@/web/components/ui/uiForm/Form"
@@ -16,12 +15,10 @@ const initialValues = {
   email: "",
   password: "",
 }
-
 const validationSchema = object({
   email: emailValidator.label("Email"),
   password: passwordValidator.label("Password"),
 })
-
 const Connexion = () => {
   const router = useRouter()
   const { saveSessionToken } = useSession()

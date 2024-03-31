@@ -1,5 +1,6 @@
 import auth from "@/api/middlewares/auth"
 import { validate } from "@/api/middlewares/validate"
+import mw from "@/api/mw"
 import {
   birthdayValidator,
   emailValidator,
@@ -78,7 +79,7 @@ const handle = mw({
       const user = await UsersModel.query().findById(usersId).throwIfNotFound()
       await user.$query().delete()
 
-      res.send(todo)
+      res.send(user)
     },
   ],
 })
