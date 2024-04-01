@@ -80,13 +80,13 @@ const Inscription = () => {
               <FormField
                 type="text"
                 name="lastname"
-                placeholder="Enter your lastname"
+                placeholder="Ex : Holland"
                 label="Nom"
               />
               <FormField
                 type="text"
                 name="firstname"
-                placeholder="Enter your firstname"
+                placeholder="Ex: François"
                 label="Prénom"
               />
             </section>
@@ -94,19 +94,19 @@ const Inscription = () => {
             <FormField
               type="email"
               name="email"
-              placeholder="Enter your email"
+              placeholder="Ex : H.françois@gmail.com"
               label="E-mail"
             />
             <FormField
               type="password"
               name="password"
-              placeholder="Enter your password"
+              placeholder="*********"
               label="Mot de passe"
             />
             <FormField
               type="password"
               name="cpassword"
-              placeholder="Confirm your password"
+              placeholder="*********"
               label="Confirmez votre mot de passe"
             />
 
