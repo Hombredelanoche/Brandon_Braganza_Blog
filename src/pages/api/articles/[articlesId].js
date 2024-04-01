@@ -37,6 +37,7 @@ const handle = mw({
       body: {
         title: titleValidator.optional(),
         description: descriptionValidator.optional(),
+        categorys: idValidator.optional(),
         author: idValidator.optional(),
       },
     }),
@@ -65,7 +66,7 @@ const handle = mw({
       query: {
         articleId: idValidator,
       },
-    }), 
+    }),
     async ({
       models: { ArticlesModel },
       input: {

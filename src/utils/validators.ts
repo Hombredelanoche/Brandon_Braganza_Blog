@@ -23,3 +23,6 @@ export const idValidator = number().integer().min(1).required()
 
 export const titleValidator = string().max(255).required()
 export const descriptionValidator = string().min(50).required()
+export const categoriesNameValidator = string().required()
+export const authorNameValidator = string().required()
+export const pageValidator = number().integer().min(1).default(1).required()
